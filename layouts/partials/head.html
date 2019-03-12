@@ -26,6 +26,12 @@
   {{ $styles := $templateStyles | resources.ExecuteAsTemplate "css/styles.css" . }}
   <link rel="stylesheet" type="text/css" href="{{ $styles.Permalink }}">
 
+  <link rel="stylesheet" href="{{ "/fonts/font-awesome/css/font-awesome.min.css" | absURL }}">
+
+  {{ $styleSCSS := resources.Get "sass/main.scss" | resources.ToCSS }}
+  <link rel="stylesheet" type="text/css" href="{{ $styleSCSS.Permalink }}">
+
+  
   <style id="inverter" media="none">
     html { filter: invert(100%) }
     * { background-color: inherit }
