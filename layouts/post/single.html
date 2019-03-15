@@ -19,8 +19,7 @@
               <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
                 <use xlink:href="#tag"></use>
               </svg>
-              {{ $href := print ("tags/" | absLangURL) (. | urlize) "/" }}
-              <a href="{{ $href }}">{{ . }}</a>
+              <a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a>
             </li>
           {{ end }}
         </ul>
@@ -31,5 +30,4 @@
     {{ end }}
     {{ .Content }}
   </main>
-  {{ partial "disqus.html" . }}
 {{ end }}
