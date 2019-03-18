@@ -9,6 +9,9 @@
       <div class="main-and-footer">
         <div>
           {{ block "main" . }}{{ end }}
+          <div class="social-heading">
+            {{ partial "social.html" . }}
+          </div>
           {{ partial "footer.html" . }}
         </div>
       </div>
