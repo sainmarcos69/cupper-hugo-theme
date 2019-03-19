@@ -1,27 +1,27 @@
 <div class="footer-social">
   {{ with .Site.Params.twitter }}
     <div class="social-icon">
-      <a href="https://twitter.com/{{ . }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a href="https://twitter.com/{{ . }}" target="_blank" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
     </div>
   {{ end }}
   {{ with .Site.Params.gitlab }}
     <div class="social-icon">
-      <a href="https://gitlab.com/{{ . }}" target="_blank"><i class="fa fa-gitlab" aria-hidden="true"></i></a>
+      <a href="https://gitlab.com/{{ . }}" target="_blank" title="GitLab"><i class="fa fa-gitlab" aria-hidden="true"></i></a>
     </div>
   {{ end }}
   {{ with .Site.Params.github }}
     <div class="social-icon">
-      <a href="https://github.com/{{ . }}" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+      <a href="https://github.com/{{ . }}" target="_blank" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
     </div>
   {{ end }}
   {{ with .Site.Params.linkedin }}
     <div class="social-icon">
-      <a href="https://www.linkedin.com/in/{{ . }}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/in/{{ . }}" target="_blank" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
     </div>
   {{ end }}
   {{ with .Site.Params.email }}
     <div class="social-icon">
-      <a href="mailto:{{.}}"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      <a href="mailto:{{.}}" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
     </div>
   {{ end }}
 </div>
