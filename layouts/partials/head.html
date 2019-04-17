@@ -31,7 +31,7 @@
   {{ $styleSCSS := resources.Get "sass/main.scss" | resources.ToCSS }}
   <link rel="stylesheet" type="text/css" href="{{ $styleSCSS.Permalink }}">
 
-  <link rel="canonical" href="{{ "/index.xml" | absURL }}" >
+  <link rel="alternate" rel="canonical" href="{{ "/index.xml" | absURL }}" >
   
   <style id="inverter" media="none">
     html { filter: invert(100%) }
