@@ -168,6 +168,7 @@ code {
 main ul,
 main ol {
     margin-left: 2.25rem;
+    margin-top: 1.25rem;
 }
 main li + li {
     margin-top: 0.5rem;
@@ -420,8 +421,6 @@ caption {
 /* Tables of contents */
 .toc {
     font-size: 0.85rem;
-    border: 1px solid;
-    padding: 1.5rem;
 }
 .toc h2 {
     font-size: 1rem;
