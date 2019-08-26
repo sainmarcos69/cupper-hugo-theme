@@ -139,11 +139,12 @@ kbd {
     box-shadow: 0.125rem 0.125rem 0 #111;
     vertical-align: 0.33em;
 }
-pre,
-.file-tree {
+pre, .file-tree {
     overflow-x: auto;
     padding: 1.5rem;
-    border: 1px solid;
+    border: 2px solid;
+    border-radius: 7px;
+    box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
 }
 code {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -566,11 +567,6 @@ pre[class*=language-] code * {
     border: 1px solid;
     white-space: pre;
     counter-reset: annotation;
-}
-.highlight {
-    background: #ddd;
-    padding: 0.0625rem 0.33rem;
-    border-radius: 0.5rem;
 }
 .numbered .highlight::after,
 .code-annotated.numbered + ol li::before  {
