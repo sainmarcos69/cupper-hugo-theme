@@ -9,6 +9,9 @@
     <div class="date">
       {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
       <strong aria-hidden="true"><i class="fa fa-calendar" title="Published date" aria-hidden="true"></i></strong> {{ .PublishDate.Format $dateFormat }}
+      {{ if .Site.Params.readingTime }}
+      &nbsp;<strong aria-hidden="true"><i class="fa fa-clock-o"></i></strong>&nbsp;{{ i18n "readingTime"}}{{ .ReadingTime }}&nbsp;{{ i18n "readTime" }}minutes
+      {{ end }}
     </div>
     {{ with .Params.tags }}
       <div class="tags">
