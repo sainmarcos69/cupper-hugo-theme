@@ -867,6 +867,27 @@ h1 svg {
   justify-content: center;
 }
 
+/* Search bar */
+.search-container {
+    width: 100%;
+}
+.search-input-box{
+    width: 100%;
+    padding:1%;
+    border:2px solid #111;
+    border-radius: 5px;
+}
+.search-input-box input{
+    font-size: 28px;
+    width: 100%;
+    height: 32px;
+    border: none;
+    padding-left: 4px;
+}
+.search-input-box input:focus{
+    outline: 2px solid transparent;
+}
+
 /* Media queries */
 @media screen and (max-width: 45em) {
     body a {

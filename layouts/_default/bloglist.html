@@ -5,9 +5,11 @@
       {{ .Content }}
     </div>
     <div class="blog-roll">
-      <h2>My recent posts</h2>
-      <ul class="patterns-list">
-      {{ range first 3 (where .Pages "Section" "post" ).ByPublishDate.Reverse }}
+      {{ if .Site.Params.search }}
+        {{ partial "search.html" . }}
+      {{ end }}
+      <ul id="blog-results" class="patterns-list">
+      {{ range (where .Site.Pages "Section" "post" ).ByPublishDate.Reverse }}
         <li>
           <h2 class="blog-roll-title">
             <a href="{{ .Permalink }}">
@@ -46,10 +48,9 @@
         </li>
       {{ end }}
       </ul>
+      {{ if .Site.Params.search }}
+        {{ partial "search-script.html" . }}
+      {{ end }}
     </div>
-    <p>
-      <a href="/blog">see all blog posts...</a>
-    </p>
-
   </main>
 {{ end }}

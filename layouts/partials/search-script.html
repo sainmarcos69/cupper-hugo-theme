@@ -1,0 +1,99 @@
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="/library/moment.min.js"></script>
+    <!-- Generate a list of posts so we can display them -->
+    {{ $p := slice }}
+    {{ range (where $.Site.RegularPages "Section" "==" "post") }}
+      {{ $post := dict "link" .RelPermalink "tags" .Params.Tags "readingTime" .ReadingTime "publishDate" .PublishDate "title" .Title "content" (substr .Plain 0 200) -}}
+      {{ $p = $p | append $post -}}
+    {{ end }}
+    <script>
+        const posts = JSON.parse(
+             {{ $p | jsonify }}
+        );
+        const $searchInput = document.querySelector("#search-content");
+        const $target = document.getElementById("blog-results");
+        const postsByTitle = posts.reduce((acc, curr) => {
+          acc[curr.title] = curr;
+          return acc;
+        }, {});
+        let index = {};
+
+        function getMatches(searchString){
+            const matches = index.search(
+              searchString.split(" ").map((p, index, arr) => {
+                return `*${p}** ${p}~4`;
+              }).join(" "));
+            const matchPosts = [];
+            matches.forEach((m) => {
+              matchPosts.push(postsByTitle[m.ref]);
+            });
+    
+            if (matchPosts.length > 0) {
+                $target.innerHTML = matchPosts.map(p => {
+                  if(p != null){
+                    var date = moment(p.publishDate).format("MMM Do YYYY"); //Jan 2, 2006;
+                    return getTemplate(p.link, p.title, date, p.content, p.readingTime, p.tags);
+                  }
+                }).join('');
+            } else {
+              $target.innerHTML = `<p>No search results found</p>`;
+            }
+        };
+
+        function searchQueryOnChange(){
+            $target.innerHTML = "";
+            var searchValue = $searchInput.value;
+            getMatches(searchValue);
+        };
+
+        function getTemplate(link, title, publishDate, description, readingTime, tags){
+          return `<li>
+              <h2 class="blog-roll-title">
+                <a href="${link}">
+                  <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                    <use xlink:href="#bookmark"></use>
+                  </svg>
+                  ${ title }
+                </a>
+              </h2>
+              <div class="blog-roll-meta-data">
+                <i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;
+                  ${ publishDate }
+                <span>|</span>
+                &nbsp;<i class="fa fa-clock-o"></i>&nbsp;${ readingTime }&nbsp;minutes
+                <p class="blog-description">
+                  ${ description }<a href="${link}">... see more</a>
+                </p>
+                ${ (tags != null && tags.length > 0) ?
+                `<div class="tags">
+                  <ul class="blog-roll-tags" aria-label="tags">
+                    ${ getTagTemplate(tags) }
+                  </ul>
+                </div>`
+                : ''}
+              </div>
+            </li>`;
+        }
+
+        function getTagTemplate(tags){
+          return tags.map(t => {
+            return `<li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              <a href="../tags/${t}">${ t }</a>
+            </li>`
+          })
+          .join('');
+        }
+
+        fetch('/search/lunr.json').then(function (res) {
+          return res.json();
+        }).then(function (data) {
+          index = lunr.Index.load(data);
+        });
+
+        $searchInput.addEventListener("change", searchQueryOnChange);
+        $searchInput.addEventListener("keyup", searchQueryOnChange);
+
+    </script>
