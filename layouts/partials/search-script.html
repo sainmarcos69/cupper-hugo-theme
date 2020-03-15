@@ -21,7 +21,7 @@
         function getMatches(searchString){
             const matches = index.search(
               searchString.split(" ").map((p, index, arr) => {
-                return `*${p}** ${p}~4`;
+                return `*${p}*`;
               }).join(" "));
             const matchPosts = [];
             matches.forEach((m) => {
