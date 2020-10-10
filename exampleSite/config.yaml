@@ -3,6 +3,8 @@ languageCode: en-us
 defaultContentLanguage: en
 title: Cupper
 theme: cupper-hugo-theme
+enableGitInfo: true
+enableEmoji: true
 
 taxonomies:
   tag: tags
@@ -14,12 +16,30 @@ imaging:
   quality: 99
 
 params:
+  author: "Your name"
+  iconTitle: "My site icon"
   description: An accessibility-friendly Hugo theme, ported from the [original Cupper](https://github.com/ThePacielloGroup/cupper) project.
   homeMetaContent: An accessibility-friendly Hugo theme, ported from the original Cupper project.
   footer: Made with [Hugo](https://gohugo.io/). Themed by [Cupper](https://github.com/zwbetz-gh/cupper-hugo-theme). Deployed to [Netlify](https://www.netlify.com/).
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat: Jan 2, 2006
   codePenUser: someUser
+  katex: true
+  darkThemeAsDefault: false
+  hideHeaderLinks: true
+  search: true
+  readingTime: true
+  indieauth: true
+  webmentionUsername: "username.co.uk"
+  maincolour: "#ff00bf"
+  # A list of custom css files can be provided, which must be placed inside
+  # 'static/'.
+  # This is useful to override just specific css classes, instead of copying
+  # the entire theme's css file to your own site.
+  # Usage:
+  # customCss:
+  #   - css/foo.css # relative path starting from static/
+  #- css/bar.css
 
 menu:
   nav:
@@ -38,3 +58,34 @@ menu:
     - name: RSS
       url: /index.xml
       weight: 5
+
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute: true
+      autoHeadingID: true
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xHTML: false
+  highlight:
+    codeFences: false
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: monokai
+    tabWidth: 4
+  tableOfContents:
+    endLevel: 6
+    startLevel: 2

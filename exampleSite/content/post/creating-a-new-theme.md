@@ -1,5 +1,6 @@
 ---
 date: "2014-09-28"
+layout: post
 tags: ["hugo", "theme", "command-line"]
 title: "Creating a New Theme"
 ---

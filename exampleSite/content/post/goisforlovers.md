@@ -37,7 +37,7 @@ Accessing a predefined variable "foo":
 
 **Parameters are separated using spaces**
 
-Calling the add function with input of 1, 2:
+alling the add function with input of 1, 2:
 
     {{ add 1 2 }}
 
