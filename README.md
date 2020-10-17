@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bc8c4e51-37ee-419d-ad4f-b378010ee546/deploy-status)](https://app.netlify.com/sites/cupper-hugo-theme/deploys)
 
-An accessibility-friendly Hugo theme, ported from the [original Cupper](https://github.com/ThePacielloGroup/cupper) project.
+An accessibility-friendly Hugo theme, ported from the [original Cupper](https://github.com/ThePacielloGroup/cupper) project by [zwbetz-gh](https://github.com/zwbetz-gh/cupper-hugo-theme) and updated here with a few additional features.
 
 ## Table of contents
 
@@ -24,6 +24,9 @@ An accessibility-friendly Hugo theme, ported from the [original Cupper](https://
 
 ## Demo
 
+This theme: https://anna-cupper-hugo-theme.netlify.app/
+
+Original theme:
 https://cupper-hugo-theme.netlify.com/
 
 ## Minimum Hugo version
@@ -35,7 +38,7 @@ Hugo version `0.60.1` or higher is required. View the [Hugo releases](https://gi
 From the root of your site:
 
 ```
-git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme
+git submodule add https://github.com/AnnaDodson/cupper-hugo-theme.git themes/cupper-hugo-theme
 ```
 
 ## Updating
@@ -56,7 +59,7 @@ hugo server --themesDir ../..
 
 ## Configuration
 
-Copy `config.yaml` from the [`exampleSite`](https://github.com/zwbetz-gh/cupper-hugo-theme/tree/master/exampleSite), then edit as desired. 
+Copy `config.yaml` from the [`exampleSite`](https://github.com/AnnaDodson/cupper-hugo-theme/tree/main/exampleSite), then edit as desired. 
 
 ## Logo
 
@@ -104,4 +107,4 @@ If you run into an issue that isn't answered by this documentation or the [`exam
 
 ## Credits
 
-Thank you to [Heydon Pickering](http://www.heydonworks.com) and [The Paciello Group](https://www.paciellogroup.com/) for creating the original Cupper project. 
+Thank you to [Heydon Pickering](http://www.heydonworks.com) and [The Paciello Group](https://www.paciellogroup.com/) for creating the original Cupper project. Thank you zwbetz-gh for your work porting to Hugo.
