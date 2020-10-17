@@ -1,24 +1,30 @@
-{{ define "main" }}
-  <main id="main">
-    <h1>
+<li>
+  <h2 class="blog-roll-title">
+    <a href="{{ .Permalink }}">
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
       {{ .Title }}
-    </h1>
-
-    <div class="date">
+    </a>
+  </h2>
+  <div class="blog-roll-meta-data">
+    <i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;
       {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
-      <strong aria-hidden="true"><i class="fa fa-calendar" title="Published date" aria-hidden="true"></i></strong> {{ .PublishDate.Format $dateFormat }}
-      {{ if .Site.Params.readingTime }}
-      &nbsp;<strong aria-hidden="true"><i class="fa fa-clock-o"></i></strong>&nbsp;{{ i18n "readingTime"}}{{ .ReadingTime }}&nbsp;{{ i18n "readTime" }}minutes
+      {{ .PublishDate.Format $dateFormat }}
+    {{ if .Site.Params.readingTime }}
+      <span>|</span>
+      &nbsp;<i class="fa fa-clock-o"></i>&nbsp;{{ i18n "readingTime"}}{{ .ReadingTime }}&nbsp;{{ i18n "readTime" }}minute read
+    {{ end }}
+    <p class="blog-description">
+      {{ if .Description  }}
+        {{ .Description }}
+      {{ else }}
+        {{ .Summary }}
       {{ end }}
-    </div>
-
+    </p>
     {{ with .Params.tags }}
       <div class="tags">
-        <strong>{{ T "tags" }} </strong>
-        <ul aria-label="{{ T "aria_label_tags" }}">
+        <ul class="blog-roll-tags" aria-label="tags">
           {{ range . }}
             <li>
               <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
@@ -30,11 +36,5 @@
         </ul>
       </div>
     {{ end }}
-    
-    {{ if ne .Params.toc false }}
-      {{ partial "toc" . }}
-    {{ end }}
-
-    {{ .Content }}
-  </main>
-{{ end }}
+  </div>
+</li>        

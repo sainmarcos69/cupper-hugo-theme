@@ -1,4 +1,4 @@
-$main-colour: #ff5e00;
+$main-colour: {{ .Site.Params.maincolour | default "#1a0013"}};
 
 .bookmark-icon{
   color: $main-colour;
@@ -7,7 +7,6 @@ $main-colour: #ff5e00;
 h1{
   .bookmark-icon{
     color: $main-colour;
-    fill: none;
   }
 }
 .bookmark{

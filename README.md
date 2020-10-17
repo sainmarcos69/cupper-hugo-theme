@@ -17,6 +17,8 @@ An accessibility-friendly Hugo theme, ported from the [original Cupper](https://
 - [Shortcodes](#shortcodes)
 - [Syntax highlighting](#syntax-highlighting)
 - [Disable toc for a blog post](#disable-toc-for-a-blog-post)
+- [Localization](#localization)
+- [Custom css](#custom-css)
 - [Getting help](#getting-help)
 - [Credits](#credits)
 
@@ -26,7 +28,7 @@ https://cupper-hugo-theme.netlify.com/
 
 ## Minimum Hugo version
 
-Hugo version `0.48` or higher is required. View the [Hugo releases](https://github.com/gohugoio/hugo/releases) and download the binary for your OS.
+Hugo version `0.60.1` or higher is required. View the [Hugo releases](https://github.com/gohugoio/hugo/releases) and download the binary for your OS.
 
 ## Installation
 
@@ -54,7 +56,7 @@ hugo server --themesDir ../..
 
 ## Configuration
 
-Copy the `config.toml` or `config.yaml` from the [`exampleSite`](https://github.com/zwbetz-gh/cupper-hugo-theme/tree/master/exampleSite), then edit as desired. 
+Copy `config.yaml` from the [`exampleSite`](https://github.com/zwbetz-gh/cupper-hugo-theme/tree/master/exampleSite), then edit as desired. 
 
 ## Logo
 
@@ -84,9 +86,21 @@ toc: false
 ---
 ```
 
+## Localization
+
+The strings in the templates of this theme can be localized. Make a copy of `<THEME_BASE_FOLDER>/i18n/en.yaml` to `<YOUR_SITE_FOLDER>/i18n/<YOUR_SITE_LANGUAGE>.yaml`, and translate one by one, changing the `translation` field.
+
+[Here is a tutorial that goes more in depth about this.](https://regisphilibert.com/blog/2018/08/hugo-multilingual-part-2-i18n-string-localization/)
+
+## Custom css
+
+Instead of copying the theme's css file to your own installation and modifying this large file, you can provide a list of css files that will be loaded after the theme's one. This enables you to override individual style while getting theme updates when they come.
+
+Please see the params section of the example site `config.yaml` for more details.
+
 ## Getting help
 
-If you run into an issue that isn't answered by this documentation or the [`exampleSite`](https://github.com/zwbetz-gh/cupper-hugo-theme/tree/master/exampleSite), then visit the [Hugo forum](https://discourse.gohugo.io/). The folks there are helpful and friendly. **Before** asking your question, be sure to read the [requesting help guidelines](https://discourse.gohugo.io/t/requesting-help/9132). Feel free to tag me in your question, my forum username is [@zwbetz](https://discourse.gohugo.io/u/zwbetz/summary).
+If you run into an issue that isn't answered by this documentation or the [`exampleSite`](https://github.com/zwbetz-gh/cupper-hugo-theme/tree/master/exampleSite), then visit the [Hugo forum](https://discourse.gohugo.io/). The folks there are helpful and friendly. **Before** asking your question, be sure to read the [requesting help guidelines](https://discourse.gohugo.io/t/requesting-help/9132).
 
 ## Credits
 

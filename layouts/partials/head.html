@@ -3,7 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  {{ .Hugo.Generator }}
+  {{ hugo.Generator }}
   <link rel="canonical" href="{{ .Permalink }}">
 
   {{ if .IsHome }}
@@ -31,13 +31,18 @@
 
   <link rel="stylesheet" href="{{ "/fonts/font-awesome/css/font-awesome.min.css" | absURL }}">
 
-  {{ $styleSCSS := resources.Get "/sass/main.scss" | resources.ToCSS }}
+  <!-- {{ $styleSCSS := resources.Get "/sass/main.scss" | resources.ToCSS }} -->
+  {{ $styleSCSS := resources.Get "/sass/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS }}
   <link rel="stylesheet" type="text/css" href="{{ $styleSCSS.Permalink }}">
+
+  {{ range .Site.Params.customCss -}}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+  {{- end }}
 
   <link rel="alternate" rel="canonical" href="{{ "/index.xml" | absURL }}" >
   
   <style id="inverter" media="none">
-    html { filter: invert(100%) }
+    .intro-and-nav, .main-and-footer { filter: invert(100%) }
     * { background-color: inherit }
     img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
   </style>
