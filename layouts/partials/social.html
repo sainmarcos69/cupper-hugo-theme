@@ -1,37 +1,69 @@
 <div class="footer-social">
-  {{ with .Site.Params.twitter }}
+  {{ with .Site.Params.social.twitter }}
     <div class="social-icon">
       <a href="https://twitter.com/{{ . }}" target="_blank" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
     </div>
   {{ end }}
-  {{ with .Site.Params.gitlab }}
+  {{ with .Site.Params.social.gitlab }}
     <div class="social-icon">
       <a href="https://gitlab.com/{{ . }}" target="_blank" title="GitLab"><i class="fa fa-gitlab" aria-hidden="true"></i></a>
     </div>
   {{ end }}
-  {{ with .Site.Params.github }}
+  {{ with .Site.Params.social.github }}
     <div class="social-icon">
       <a href="https://github.com/{{ . }}" target="_blank" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
     </div>
   {{ end }}
-  {{ with .Site.Params.linkedin }}
+  {{ with .Site.Params.social.linkedin }}
     <div class="social-icon">
       <a href="https://www.linkedin.com/in/{{ . }}" target="_blank" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
     </div>
   {{ end }}
-  {{ with .Site.Params.instagram }}
+  {{ with .Site.Params.social.instagram }}
     <div class="social-icon">
       <a href="https://www.instagram.com/{{ . }}" target="_blank" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
     </div>
   {{ end }}
-  {{ with .Site.Params.pinterest }}
+  {{ with .Site.Params.social.pinterest }}
     <div class="social-icon">
       <a href="https://www.pinterest.co.uk/{{ . }}/_saved/" target="_blank" title="Pinterest"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a>
     </div>
   {{ end }}
-  {{ with .Site.Params.email }}
+  {{ with .Site.Params.social.slackinvite }}
+    <div class="social-icon">
+      <a href="https://join.slack.com/t/{{ .name }}/shared_invite/{{ .code }}" target="_blank" title="Join Slack"><i class="fa fa-slack" aria-hidden="true"></i></a>
+    </div>
+  {{ end }}
+  {{ with .Site.Params.social.slackworkspace }}
+    <div class="social-icon">
+      <a href="https://{{ .name }}.slack.com" target="_blank" title="Slack"><i class="fa fa-slack" aria-hidden="true"></i></a>
+    </div>
+  {{ end }}
+  {{ with .Site.Params.social.facebook }}
+    <div class="social-icon">
+      <a href="https://facebook.com/{{ . }}" target="_blank" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    </div>
+  {{ end }}
+  {{ with .Site.Params.social.tiktok }}
+    <div class="social-icon">
+      <a href="https://www.tiktok.com/@{{ . }}" target="_blank" title="TikTok"><i class="fa fa-tiktok" aria-hidden="true"></i></a>
+    </div>
+  {{ end }}
+  {{ with .Site.Params.social.telephone }}
+    <div class="social-icon">
+      <a href="tel:{{ . }}" target="_blank" title="Call"><i class="fa fa-phone-square" aria-hidden="true"></i></a>
+    </div>
+  {{ end }}
+  {{ with .Site.Params.social.email }}
     <div class="social-icon">
       <a href="mailto:{{.}}" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
     </div>
+  {{ end }}
+  {{ with .Site.Params.social.misc }}
+    {{ range . }}
+      <div class="social-icon">
+        <a href="{{ .url }}" title="{{ .name }}"><i class="fa {{ .faicon }}" aria-hidden="true"></i></a>
+      </div>
+    {{ end }}
   {{ end }}
 </div>
