@@ -14,10 +14,11 @@ From Zwbetz-gh:
 * Toggleable table of contents per blog post
 {{< /ticks >}}
 
-Additions in this theme:
+Additional features in this theme:
 {{< ticks >}}
 * Theme colour configurable in config file
-* Top three posts displayed on home page
+* Latest three posts displayed on home page
+* Social links in footer
 * Post description or summary shown in blog lists
 * Post read times
 * Font awesome icons
