@@ -17,13 +17,6 @@ imaging:
 
 params:
   author: "Your name"
-  twitter: "TwitterName"
-  gitlab: "GitLabName"
-  github: "GitHubName"
-  linkedin: "LinkedinName"
-  email: "myemail@address.com"
-  pinterest: "PinterestName"
-  instagram: "InstagramName"
   iconTitle: "My site icon"
   description: An accessibility-friendly Hugo theme, ported from the [original Cupper](https://github.com/ThePacielloGroup/cupper) project.
   homeMetaContent: An accessibility-friendly Hugo theme, ported from the original Cupper project.
@@ -47,6 +40,31 @@ params:
   # customCss:
   #   - css/foo.css # relative path starting from static/
   #- css/bar.css
+  social:
+    twitter: "TwitterName"
+    gitlab: "GitLabName"
+    github: "GitHubName"
+    linkedin: "LinkedinName"
+    email: "myemail@address.com"
+    pinterest: "PinterestName"
+    instagram: "InstagramName"
+    reddit: "RedditSubreddit"
+    slackinvite:
+      name: "technottingham"
+      code: "enQtNTgxNTYxMTExOTU5LTgxMDVjODUxYWI3MzNjOTJlMWUyMTYxNGEyNzYxNGYxNTExMWU0MmFkYjc5ZjI5MzY4ZmQ3MDdjZjdkNDg0ZDA"
+    slackworkspace:
+      name: "technottingham"
+    facebook: "FacebookName"
+    tiktok: "TikTokName"
+    telephone: "0123456789"
+    misc:
+      - name: "Discord"
+        url: "https://www.discord.com/"
+        icon: "super-tiny-icons/discord.svg"
+      - name: "YouTube"
+        url: "https://youtube.com"
+        icon: "super-tiny-icons/youtube.html"
+
 
 menu:
   nav:

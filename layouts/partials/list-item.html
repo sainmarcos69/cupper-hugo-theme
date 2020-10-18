@@ -8,13 +8,16 @@
     </a>
   </h2>
   <div class="blog-roll-meta-data">
-    <i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;
-      {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
-      {{ .PublishDate.Format $dateFormat }}
+    <p style="margin-top: 0;">
+    {{ partial "ikonate/svg/calendar.svg" }}
+    {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
+    {{ .PublishDate.Format $dateFormat }}
     {{ if .Site.Params.readingTime }}
-      <span>|</span>
-      &nbsp;<i class="fa fa-clock-o"></i>&nbsp;{{ i18n "readingTime"}}{{ .ReadingTime }}&nbsp;{{ i18n "readTime" }}minute read
+    <span style="margin-top: 0;">
+      |&nbsp;{{ partial "ikonate/svg/stopwatch.svg" }}&nbsp;{{ i18n "readingTime"}}{{ .ReadingTime }}&nbsp;{{ i18n "readTime" }}minute read
+    </span>
     {{ end }}
+    </p>
     <p class="blog-description">
       {{ if .Description  }}
         {{ .Description }}
@@ -27,10 +30,12 @@
         <ul class="blog-roll-tags" aria-label="tags">
           {{ range . }}
             <li>
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              <a href="{{ "/tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a>
+              <a href="{{ "/tags/" | absLangURL }}{{ . | urlize }}">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                {{ . }}
+              </a>
             </li>
           {{ end }}
         </ul>

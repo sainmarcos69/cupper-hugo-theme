@@ -8,10 +8,12 @@
     </h1>
 
     <div class="date">
-      {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
-      <strong aria-hidden="true"><i class="fa fa-calendar" title="Published date" aria-hidden="true"></i></strong> {{ .PublishDate.Format $dateFormat }}
+      <p>
+        {{ $dateFormat := $.Site.Params.dateFormat | default "Jan 2, 2006" }}
+        {{ partial "ikonate/svg/calendar.svg" }} Published {{ .PublishDate.Format $dateFormat }}
+      </p>
       {{ if .Site.Params.readingTime }}
-      &nbsp;<strong aria-hidden="true"><i class="fa fa-clock-o"></i></strong>&nbsp;{{ i18n "readingTime"}}{{ .ReadingTime }}&nbsp;{{ i18n "readTime" }}minutes
+      <p>{{ partial "ikonate/svg/stopwatch.svg" }} Reading time {{ i18n "readingTime"}}{{ .ReadingTime }}&nbsp;{{ i18n "readTime" }}minutes</p>
       {{ end }}
     </div>
 
@@ -21,10 +23,12 @@
         <ul aria-label="{{ T "aria_label_tags" }}">
           {{ range . }}
             <li>
-              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
-                <use xlink:href="#tag"></use>
-              </svg>
-              <a href="{{ "/tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a>
+              <a href="{{ "/tags/" | absLangURL }}{{ . | urlize }}">
+                <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                  <use xlink:href="#tag"></use>
+                </svg>
+                {{ . }}
+              </a>
             </li>
           {{ end }}
         </ul>
