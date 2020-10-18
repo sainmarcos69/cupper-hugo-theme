@@ -48,6 +48,7 @@ params:
     email: "myemail@address.com"
     pinterest: "PinterestName"
     instagram: "InstagramName"
+    reddit: "RedditSubreddit"
     slackinvite:
       name: "technottingham"
       code: "enQtNTgxNTYxMTExOTU5LTgxMDVjODUxYWI3MzNjOTJlMWUyMTYxNGEyNzYxNGYxNTExMWU0MmFkYjc5ZjI5MzY4ZmQ3MDdjZjdkNDg0ZDA"
@@ -59,10 +60,10 @@ params:
     misc:
       - name: "Discord"
         url: "https://www.discord.com/"
-        faicon: "fa-discord"
-      - name: "Irc"
-        url: "https://www.irc.com/"
-        faicon: "fa-laptop"
+        icon: "super-tiny-icons/discord.svg"
+      - name: "YouTube"
+        url: "https://youtube.com"
+        icon: "super-tiny-icons/youtube.html"
 
 
 menu:
