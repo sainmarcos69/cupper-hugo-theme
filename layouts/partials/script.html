@@ -8,3 +8,5 @@
 {{ $searchJs := resources.Get "js/search.js" | fingerprint }}
 <script src="{{ $searchJs.RelPermalink }}"></script>
 {{ end }}
+
+{{ partial "analytics.html" }}
