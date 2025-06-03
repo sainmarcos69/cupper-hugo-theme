@@ -1,7 +1,7 @@
-baseURL: https://example.com
+baseURL: https://bespoke-kringle-b2907b.netlify.app/
 languageCode: en-us
 defaultContentLanguage: en
-title: Cupper
+title: ChessBlog
 theme: cupper-hugo-theme
 enableGitInfo: true
 enableEmoji: true
