@@ -1,7 +1,7 @@
 ---
 title: "lichess shortcode"
 date: 2025-05-19
-tags: ["how-to"]
+tags: [how-to]
 draft: false
 ---
 
