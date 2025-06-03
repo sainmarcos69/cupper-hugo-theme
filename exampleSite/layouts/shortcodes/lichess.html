@@ -1,0 +1,12 @@
+{{- $s := .Get "src" -}}
+{{- $w := .Get "width" -}}
+{{- $h := .Get "height" -}}
+{{- $t := .Get "title" -}}
+
+<div class="lichess">
+  <iframe src="{{- $s -}}"
+    {{- with $t -}}title="{{ . }}"{{- end -}}
+    {{- with $w -}}width="{{ . }}"{{- end -}}
+    {{- with $h -}}height="{{ . }}"{{- end -}}>
+  </iframe>
+</div>
